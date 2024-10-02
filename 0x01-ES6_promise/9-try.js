@@ -1,10 +1,14 @@
-export default function divideFunction(numerator, denominator) {
+export default function guardrail(callback) {
+  const result = {
+    value: null,
+    error: null
+  };
+
   try {
-    if (denominator === 0) {
-      throw new Error('cannot divide by 0');
-    }
-    return numerator / denominator;
+    result.value = callback(); // Execute the callback
   } catch (error) {
-    throw Error(error.message);
+    result.error = error.message; // Capture the error message
   }
+
+  return result; // Return the result object
 }
