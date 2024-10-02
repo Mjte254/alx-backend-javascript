@@ -1,8 +1,7 @@
 function getResponseFromAPI() {
   return new Promise((resolve, reject) => {
-    // Simulating an API call logic here
-    const responseFromAPI = true; // Replace with actual API call logic
-
+    // API call logic here
+    // ...
     if (responseFromAPI) {
       resolve(responseFromAPI); // resolve with API response
     } else {
@@ -12,3 +11,4 @@ function getResponseFromAPI() {
 }
 
 export default getResponseFromAPI;
+
