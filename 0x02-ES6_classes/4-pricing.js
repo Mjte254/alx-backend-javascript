@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable */
+
 import Currency from './3-currency';
 
 export default class Pricing {
@@ -6,26 +9,33 @@ export default class Pricing {
     this._currency = currency;
   }
 
+  // Getter and Setter for amount
   get amount() {
     return this._amount;
   }
 
+  set amount(value) {
+    if (typeof value !== 'number') {
+      throw new Error('TypeError: Amount must be a number');
+    }
+    this._amount = value;
+  }
+
+  // Getter and setter for currency
   get currency() {
     return this._currency;
   }
 
-  set amount(amount) {
-    this._amount = amount;
+  set currency(value) {
+    this._currency = value;
   }
 
-  set currency(currency) {
-    this._currency = currency;
-  }
-
+  // Method
   displayFullPrice() {
     return `${this._amount} ${new Currency(this._currency.code, this._currency.name).displayFullCurrency()}`;
   }
 
+  // Static Method
   static convertPrice(amount, conversionRate) {
     return amount * conversionRate;
   }
