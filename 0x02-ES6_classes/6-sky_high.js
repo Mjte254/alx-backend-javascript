@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable */
-
 import Building from './5-building';
 
 export default class SkyHighBuilding extends Building {
@@ -9,17 +6,15 @@ export default class SkyHighBuilding extends Building {
     this._floors = floors;
   }
 
-  // getter for sqft
-  get sqft() {
-    return this._sqft;
-  }
-
-  // getter for floors
   get floors() {
     return this._floors;
   }
 
+  set floors(value) {
+    this._floors = value;
+  }
+
   evacuationWarningMessage() {
-    return `Evacuate slowly the ${this.floors} floors`;
+    return `Evacuate slowly the ${this._floors} floors`;
   }
 }

@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable */
-
 import Car from './10-car';
 
 export default class EVCar extends Car {
@@ -10,7 +7,6 @@ export default class EVCar extends Car {
   }
 
   cloneCar() {
-    const Spec = super.constructor[Symbol.species];
-    return new Spec();
+    return new Car(this._brand, this._motor, this._color);
   }
 }
